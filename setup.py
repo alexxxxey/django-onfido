@@ -15,6 +15,7 @@ setup(
         'python-dateutil>=2.5',
         'requests>=2.10',
         'simplejson>=3.8',
+        'django-mysql==2.3.0'
     ],
     include_package_data=True,
     description='Django app for integration with Onfido.',

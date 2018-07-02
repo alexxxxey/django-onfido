@@ -4,7 +4,8 @@ import logging
 from dateutil.parser import parse as date_parse
 
 from django.conf import settings
-from django.contrib.postgres.fields import JSONField
+# from django.contrib.postgres.fields import JSONField'
+from django_mysql.models import JSONField
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.timezone import now as tz_now
