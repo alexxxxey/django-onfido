@@ -90,7 +90,7 @@ class ApplicantAdmin(RawMixin, UserMixin, admin.ModelAdmin):
     )
     list_filter = ('created_at',)
     ordering = (
-        'user__first_name', 'user__last_name', 'user__{}' % get_user_model().USERNAME_FIELD
+        'user__first_name', 'user__last_name', 'user__%s' % get_user_model().USERNAME_FIELD
     )
     readonly_fields = (
         'onfido_id', 'user', 'created_at', '_raw'
