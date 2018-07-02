@@ -3,6 +3,7 @@ import simplejson as json  # simplejson supports Decimal
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth import get_user_model
 
 from .models import (
     Applicant,
@@ -89,7 +90,7 @@ class ApplicantAdmin(RawMixin, UserMixin, admin.ModelAdmin):
     )
     list_filter = ('created_at',)
     ordering = (
-        'user__first_name', 'user__last_name', 'user__username'
+        'user__first_name', 'user__last_name', 'user__{}' % get_user_model().USERNAME_FIELD
     )
     readonly_fields = (
         'onfido_id', 'user', 'created_at', '_raw'
